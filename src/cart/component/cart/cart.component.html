@@ -1,0 +1,46 @@
+<div class="cart" *ngIf="cartproduct.length>=1;else loggedOut">
+    <div class="container">
+        <h3 style="color: #ff445a;">shopping cart</h3>
+        <p>you have <span  style="color: #ff445a;">{{x}}</span> item in cart</p>
+        <div class="row">
+             <div class="col-2"></div>
+             <div class="col-2">name</div>
+             <div class="col-2">price</div>
+             <div class="col-2">quantity</div>
+             <div class="col-2">title</div>
+             <div class="col-2"><a class="btn" style="background-color: #ff445a; color: #fff;"  (click)="clearcart()"> clear your cart</a></div>
+        </div>
+        <div class="showitem" >
+            <div class="row mt-5" *ngFor="let x of cartproduct">
+                <div class="col-2 ">
+                    <img src={{x.item.image}} width="50px" height="50px"/>
+                </div>
+                <div class="col-2">{{x.item.title}}</div>
+                <div class="col-2">{{x.item.price}}</div>
+                <div class="col-2">
+                    <input  class="form-control" type="number" value={{x.quantity}}/>
+                </div>
+                <div class="col-2">title</div>
+                <div class="col-2"><a  class="btn" style="background-color: #ff445a;color: #fff;" (click)=" deletitem(x.item.id)">delete</a></div>
+           </div>
+        </div>
+        <div class="order mt-5 mb-5">
+            <div class="row">
+                <div class="col-2">
+                
+                </div>
+                <div class="col-4">
+                    <p>total <span style="color: #ff445a;">{{total}}</span></p>
+                </div>
+                <div class="col-6">
+                    <a class="btn" style="background-color: green; color: #fff;">order now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #loggedOut>
+    <div class="container m-5">
+        <h2>your cart is empty</h2>
+    </div>
+  </ng-template>

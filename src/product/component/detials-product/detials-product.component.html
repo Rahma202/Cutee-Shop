@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row" *ngIf="detialProduct; else loggedOut">
+        <div class="col-md-6 col-sm-12">
+            <img width="100%;" height="60%" src="{{detialProduct.image}}" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <p>
+                <span style="color: #ff445a;display: block;font-size: larger;font-weight: bolder;">
+                    Product Name</span>
+                    {{detialProduct.title}}
+            </p>
+            <p>
+                <span style="color: #ff445a;display: block;font-size: larger;font-weight: bolder;">
+                    category</span>
+                    {{detialProduct.category}}</p>
+            <p>
+            <p>
+               <span style="color: #ff445a;display: block;font-size: larger;font-weight: bolder;">
+                    Description</span>
+                {{detialProduct.description}}
+            </p>
+            <p>
+                <span style="color: #ff445a;display: block;font-size: larger;font-weight: bolder;">
+                    price</span>
+                {{detialProduct.price}}
+            </p>
+            <p>
+                <span style="color: #ff445a;display: block;font-size: larger;font-weight: bolder;">
+                    count</span>
+                {{detialProduct.rating.count}}
+            </p>
+            
+        </div>
+    </div>
+    <ng-template #loggedOut  >
+        <app-spinner></app-spinner>
+   </ng-template>
+</div>

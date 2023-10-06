@@ -1,0 +1,14 @@
+<div class="card"  >
+    <img src={{data.image}} class="card-img-top" style="width: 80%; height: 150px;">
+    <div class="card-body">
+      <a class="btn" style=" position: absolute;top: 4px;right: 1px;background-color: #ff445a;border-radius:10% 40%;color: aliceblue;" routerLink="detial/{{data.id}}">detials</a>
+      <h5 class="card-title">{{data.title}}</h5>
+      <a class="btn " style="background-color: #ff445a;color: white;"*ngIf="!checked" (click)="checked=true">add to card</a>
+      <div class="quentity" *ngIf="checked">
+        <input type="number" class="form-control" style="width:50%;display: inline-block;" [(ngModel)]="amount">
+      <a class="btn " style="background-color: #ff445a;color: white;" (click)="add()">add </a>
+      </div>
+      <span class="animate__animated  animate__shakeY" style="position: absolute; right: 20px; bottom: 10px; display: block;background-color: #ff445a;color: white;padding: 3px; border-radius: 5px;">
+        {{data.price}}</span>
+    </div>
+  </div>

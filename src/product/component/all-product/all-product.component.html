@@ -1,0 +1,15 @@
+<div class="container m-auto" >
+  <select (change)="getspecificcategory($event)" id="product" name="product"  style="border:2px solid #ff445a; border-radius: 5px;">
+    <option >all</option>
+
+    <option value={{x}} *ngFor="let x of allcategories" >{{x}}</option>
+  </select>
+   <div class="row " *ngIf="allProducts; else loggedOut">
+     <div class="col-md-4 mt-3 text-align product"    *ngFor="let x of allProducts" r  >
+         <app-product [data]="x" (item)="reciveData($event)" ></app-product>
+     </div>
+   </div>
+   <ng-template #loggedOut  >
+    <app-spinner></app-spinner>
+   </ng-template>
+</div>

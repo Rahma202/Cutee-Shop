@@ -1,0 +1,14 @@
+.showitem .row{
+    background-color: rgb(134, 129, 129);
+    border-radius: 5px;
+    color: #0d0d0d;
+    padding: 3px;
+}
+
+.order{
+    border-bottom: 2px solid rgb(146, 136, 136);
+}
+.container{
+    border: 1px solid #000;
+    border-radius: 20px;
+}
