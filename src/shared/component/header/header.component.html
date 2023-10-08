@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" style="margin: auto;">
                 <li class="nav-item">
                     <a class="nav-link"  routerLinkActive="active"  routerLink="/">Home</a>
                 </li>
@@ -16,8 +16,10 @@
                 <li class="nav-item" >
                     <a class="nav-link"routerLinkActive="active" routerLink="/product">Products</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link"routerLinkActive="active" routerLink="/cart">Cart</a>
+                <li class="nav-item" routerLinkActive="active"  >
+                    <a class="nav-link"routerLinkActive="active" routerLink="/cart" >
+                        <i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i><sub style="color:#ff445a;;">{{x}}</sub>
+                       </a>
                 </li>
                
             </ul>

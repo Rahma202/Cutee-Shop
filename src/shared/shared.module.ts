@@ -6,6 +6,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SpinnerComponent } from './component/spinner/spinner.component';
 import { AboutComponent } from './component/about/about.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AboutComponent } from './component/about/about.component';
   imports: [
     CommonModule,
     AppRoutingModule,
+    FormsModule
   ],
   exports:[ HeaderComponent,SliderComponent,FooterComponent,SpinnerComponent,AboutComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/product/service/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-product',
@@ -7,7 +8,7 @@ import { ProductService } from 'src/product/service/product.service';
   styleUrls: ['./all-product.component.css']
 })
 export class AllProductComponent implements OnInit {
-  constructor(private serve:ProductService){
+  constructor(private serve:ProductService,private router: Router){
   
   }
   ngOnInit(): void {
@@ -21,13 +22,13 @@ export class AllProductComponent implements OnInit {
   getProduct(){
     this.serve.getAllproduct().subscribe((res:any)=>{
       this.allProducts=res;
-      console.log(this.allProducts);
+    
     })
   }
   getallcategories(){
     this.serve.getAllcategories().subscribe((res:any)=>{
       this.allcategories=res;
-      console.log(this.allcategories);
+     
     })
   }
   getspecificcategory(item:any){
@@ -45,10 +46,9 @@ export class AllProductComponent implements OnInit {
     }
     reciveData(evenet:any){
        if("cart" in localStorage){
-       this.cartProduct=JSON.parse(localStorage.getItem("cart")!);
-       console.log(this.cartProduct);
-       
-        let id=this.cartProduct.find(item =>item.id==evenet.item.id);
+       this.cartProduct=JSON.parse(localStorage.getItem("cart")!);       
+        let id=this.cartProduct.find(item =>item.item.id==evenet.item.id);
+        
         console.log(id);
         if(id){
           alert("this item in your cart")
@@ -60,6 +60,7 @@ export class AllProductComponent implements OnInit {
         this.cartProduct.push(evenet);
         localStorage.setItem("cart",JSON.stringify(this.cartProduct))
        }
+       location.reload()
     }
   
  

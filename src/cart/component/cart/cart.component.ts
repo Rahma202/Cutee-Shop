@@ -10,7 +10,7 @@ export class CartComponent implements OnInit{
     this.gatallproduct();
   }
   x:number=5
-  cartproduct:any;
+  cartproduct:any[]=[];
   total:number=0
   gatallproduct(){
       let allproduct=JSON.parse(localStorage.getItem('cart')!);

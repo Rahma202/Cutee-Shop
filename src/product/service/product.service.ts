@@ -8,6 +8,7 @@ export class ProductService {
 
   constructor(private http:HttpClient) {
    }
+   cart:number=0;
   getAllproduct(){
    return this.http.get('https://fakestoreapi.com/products')   
   }
